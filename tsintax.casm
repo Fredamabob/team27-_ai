@@ -1,0 +1,11 @@
+.global start:
+
+start:
+
+    MOV #0x40000000 $B
+    MOV #0x00000000 $A
+loop:
+    MEMW [4] $A $B
+    ADD #0x02 $B
+	
+    JMP <> :loop
